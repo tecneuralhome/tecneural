@@ -1,43 +1,45 @@
 <!-- ===== HEADER ===== -->
 <div class="nav-header">
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href=""><img src="./assets/logo.png"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
-          </li>
+  <section class="nav-max-flex-box">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href=""><img src="./assets/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Service</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contact</a>
+            </li>
 
-          <li class="nav-item login-btn">
-            <a class="nav-link" href="">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link reg-btn" href="">Create Account</a>
-          </li>
-        </ul>
+            <li class="nav-item login-btn">
+              <a class="nav-link" href="">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link reg-btn" href="">Create Account</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </section>
 </div>
 
 
@@ -64,7 +66,7 @@
 </section>
 
 <!-- ===== BANNER SERVICE TAG ===== -->
-<section class="banner-service-tag">
+<!-- <section class="banner-service-tag">
   <div class="row">
     <div class="col-sm-12 col-md-12 col-lg-2">
       <div class="service-tag">
@@ -97,7 +99,23 @@
       </div>
     </div>
   </div>
+</section> -->
+
+<section class="banner-service-tag">
+  <div class="slider-container">
+    <div class="slider" [ngStyle]="{ transform: 'translateX(' + translateX + 'px)' }">
+      <div class="slide" *ngFor="let service of services">
+        <div class="service-tag">
+          <img [src]="service.img" [alt]="service.name">
+          <span>{{ service.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+
+
 
 <!-- ===== ABOUT US ===== -->
 
@@ -139,61 +157,61 @@
       <div class="service-card-blog">
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_block = true" (mouseleave)="visibility_block = false">
               <div class="service-content">
                 <h3>Blockchain Development</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_block" src="../assets/service-blockchain.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_bit = true" (mouseleave)="visibility_bit = false">
               <div class="service-content">
                 <h3>Bitcoin Mining</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_bit" src="../assets/service-bitcoin.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_sol = true" (mouseleave)="visibility_sol = false">
               <div class="service-content">
                 <h3>Cloud Solutions</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_sol" src="../assets/service-solution.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_dev = true" (mouseleave)="visibility_dev = false">
               <div class="service-content">
                 <h3>Web / Fullstack Development</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_dev" src="../assets/service-thorough.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_app = true" (mouseleave)="visibility_app = false">
               <div class="service-content">
                 <h3>Mobile App Development</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_app" src="../assets/service-app-development.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-12 col-lg-4">
-            <div class="service-card">
+            <div class="service-card" (mouseenter)="visibility_ui = true" (mouseleave)="visibility_ui = false">
               <div class="service-content">
                 <h3>UI / UX</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s</p>
+                <img *ngIf="!visibility_ui" src="../assets/service-ui-design.png">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                 <button>View more</button>
               </div>
             </div>
@@ -206,56 +224,81 @@
 
 <!-- ===== TECHNICAL TOOL ===== -->
 
-<section class="technical-tool-blog">
-  <h2>Technical Tool</h2>
-  <div class="tool-flex-box">
-    <div class="tool-bar">
-      <img src="../assets/angular-icon.png">
-      <p>Angular Js</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/react-icon.png">
-      <p>React Js</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/js-icon.png">
-      <p>Java script</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/sass-icon.png">
-      <p>Sass</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/html-icon.png">
-      <p>Html</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/vue-icon.png">
-      <p>Vue</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/swift-icon.png">
-      <p>Swift</p>
-    </div>
-    <div class="tool-bar">
-      <img src="../assets/dart-icon.png">
-      <p>Dart</p>
+<!-- <section class="technical-tool-blog">
+  <div class="tool-max-wd">
+    <h2>Technical Tool</h2>
+    <div class="tool-flex-box">
+      <div class="tool-bar">
+        <img src="../assets/angular-icon.png">
+        <p>Angular Js</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/react-icon.png">
+        <p>React Js</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/js-icon.png">
+        <p>Java script</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/sass-icon.png">
+        <p>Sass</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/html-icon.png">
+        <p>Html</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/vue-icon.png">
+        <p>Vue</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/swift-icon.png">
+        <p>Swift</p>
+      </div>
+      <div class="tool-bar">
+        <img src="../assets/dart-icon.png">
+        <p>Dart</p>
+      </div>
     </div>
   </div>
+</section> -->
+
+<section class="technical-tool-blog">
+  <div class="tool-max-wd">
+  <h2>Technical Tool</h2>
+  <div class="slider-container">
+    <div class="slider" [ngStyle]="{ transform: 'translateX(' + translateX_tool + 'px)' }">
+      <div class="slide" *ngFor="let tool of tools">
+        <div class="tool-tag">
+          <img [src]="tool.img" [alt]="tool.name">
+          <span>{{ tool.name }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </section>
+
+
+<!-- <app-tech-tools></app-tech-tools> -->
+
 
 <!-- ===== PROCESS ===== -->
 
 <section class="process-blog">
-  <div class="container">
-    <h2>Our Process</h2>
-    <p>Our process begins by engaging with clients to thoroughly understand their requirements and identify the most
-      effective approach to address their needs. This understanding enables us to conduct in-depth research, strategize,
-      and develop tailored solutions to help clients achieve their business objectives. We execute the work with
-      professionalism, ensuring all bugs and design imperfections are resolved before delivery.</p>
-  </div>
-  <div class="process-img">
-    <img src="../assets/process-banner.png">
+  <div class="process-max-wd">
+    <div class="container">
+      <h2>Our Process</h2>
+      <p>Our process begins by engaging with clients to thoroughly understand their requirements and identify the most
+        effective approach to address their needs. This understanding enables us to conduct in-depth research,
+        strategize,
+        and develop tailored solutions to help clients achieve their business objectives. We execute the work with
+        professionalism, ensuring all bugs and design imperfections are resolved before delivery.</p>
+    </div>
+    <div class="process-img">
+      <img src="../assets/process-banner.png">
+    </div>
   </div>
 </section>
 
@@ -316,72 +359,75 @@
 <!-- ===== CONTACT US ===== -->
 
 <section class="contact-us-blog">
-  <div class="contact-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-6">
-          <div class="form-box">
-            <h2>Lorem ipsum dolor sit amet, </h2>
-            <p>Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst. Morbi
-              elementum faucibus quam non venenatis.</p>
-            <form>
-              <input class="email" type="email" placeholder="Enter Your Mail">
-              <textarea placeholder="Type Your Requirement"></textarea>
-              <div class="check-box">
-                <input type="checkbox">
-                <label> Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea
-                  dictumst. Morbi elementum faucibus quam non venenatis.</label>
-              </div>
-              <button>Submit</button>
-            </form>
+  <div class="contact-footer-max-wd">
+    <div class="contact-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="form-box">
+              <h2>Lorem ipsum dolor sit amet, </h2>
+              <p>Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
+                Morbi
+                elementum faucibus quam non venenatis.</p>
+              <form>
+                <input class="email" type="email" placeholder="Enter Your Mail">
+                <textarea placeholder="Type Your Requirement"></textarea>
+                <div class="check-box">
+                  <input type="checkbox">
+                  <label> Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea
+                    dictumst. Morbi elementum faucibus quam non venenatis.</label>
+                </div>
+                <button>Submit</button>
+              </form>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-6">
-          <div class="contact-faq-box">
-            <h2>FAQ's</h2>
-            <div class="accordion" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-                  </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
-                    Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
-                    consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="contact-faq-box">
+              <h2>FAQ's</h2>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
+                      Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
+                      consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-                  </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
-                    Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
-                    consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
+                      Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
+                      consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit?
-                  </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
-                    Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
-                    consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Cras eu neque vestibulum, bibendum dolor vel, scelerisque dolor. In hac habitasse platea dictumst.
+                      Morbi elementum faucibus quam non venenatis. Fusce nulla quam, eleifend at rhoncus eu, faucibus
+                      consequat nisi. Aliquam faucibus magna vitae ultrices condimentum.
+                    </div>
                   </div>
                 </div>
               </div>
@@ -390,67 +436,67 @@
         </div>
       </div>
     </div>
+
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <section class="footer-blog">
+      <div class="footer-bg">
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1><img src="../assets/footer-logo.png"></h1>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-2">
+            <div class="quick-link">
+              <h2>Quick link</h2>
+              <ul>
+                <li>Home</li>
+                <li>Approach</li>
+                <li>About</li>
+                <li>Blog</li>
+                <li>Pricing</li>
+                <li>Contact us</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-2">
+            <div class="our-service">
+              <h2>Our Service</h2>
+              <ul>
+                <li>Mobile development</li>
+                <li>Web development</li>
+                <li>Block Chain</li>
+                <li>Crypto</li>
+                <li>NFT</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-12 col-lg-4">
+            <h2 class="where-we-are-heading">Where we are</h2>
+            <div class="where-we-are">
+              <img src="../assets/footer-where-we-are.png">
+              <img src="../assets/footer-where-we-are.png">
+            </div>
+          </div>
+        </div>
+
+        <div class="copy-follow-flex">
+          <div class="follow">
+            <ul>
+              <li>Follow us</li>
+              <li><img src="../assets/linkedin-icon.png"></li>
+              <li><img src="../assets/fb-icon.png"></li>
+              <li><img src="../assets/whatsapp-icon.png"></li>
+              <li><img src="../assets/instagram-icon.png"></li>
+            </ul>
+          </div>
+          <div class="copy-rights">
+            <span>©2024 Techneural Software solution. All Rights Reserved</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
-
-
-  <!-- ===== FOOTER ===== -->
-
-  <section class="footer-blog">
-    <div class="footer-bg">
-      
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-4">
-          <h1><img src="../assets/footer-logo.png"></h1>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-2">
-          <div class="quick-link">
-            <h2>Quick link</h2>
-            <ul>
-              <li>Home</li>
-              <li>Approach</li>
-              <li>About</li>
-              <li>Blog</li>
-              <li>Pricing</li>
-              <li>Contact us</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-2">
-          <div class="our-service">
-            <h2>Our Service</h2>
-            <ul>
-              <li>Mobile development</li>
-              <li>Web development</li>
-              <li>Block Chain</li>
-              <li>Crypto</li>
-              <li>NFT</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-12 col-lg-4">
-          <h2 class="where-we-are-heading">Where we are</h2>
-          <div class="where-we-are">
-            <img src="../assets/footer-where-we-are.png">
-            <img src="../assets/footer-where-we-are.png">
-          </div>
-        </div>
-      </div>
-
-      <div class="copy-follow-flex">
-        <div class="follow">
-          <ul>
-            <li>Follow us</li>
-            <li><img src="../assets/linkedin-icon.png"></li>
-            <li><img src="../assets/fb-icon.png"></li>
-            <li><img src="../assets/whatsapp-icon.png"></li>
-            <li><img src="../assets/instagram-icon.png"></li>
-          </ul>
-        </div>
-        <div class="copy-rights">
-          <span>©2024 Techneural Software solution. All Rights Reserved</span>
-        </div>
-      </div>
-    </div>
-  </section>
 </section>

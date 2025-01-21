@@ -1,0 +1,10 @@
+<section class="technical-tool-blog">
+    <h2>Technical Tool</h2>
+    <div class="tool-flex-box" #toolFlexBox>
+      <div class="tool-bar" *ngFor="let tool of tools">
+        <img [src]="tool.img" [alt]="tool.name">
+        <p>{{ tool.name }}</p>
+      </div>
+    </div>
+  </section>
+  

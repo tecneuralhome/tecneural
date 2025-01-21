@@ -199,6 +199,10 @@
  }
 
  .service-blog .service-bg .service-card-blog .service-card {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 350px;
    margin: 10px;
    background-color: #ffffff;
    padding: 15px;
@@ -206,14 +210,23 @@
    box-shadow: 0px 4px 5px darkgrey;
  }
 
+ .service-blog .service-bg .service-card-blog .service-card:hover {
+   box-shadow: 0px 14px 15px darkgrey;
+ }
+
  .service-blog .service-bg .service-card-blog .service-card .service-content {
    margin: 10px;
    padding: 15px 25px;
    background-color: #FFFADA;
+   text-align: center;
+ }
+
+ .service-blog .service-bg .service-card-blog .service-card .service-content img {
+   width: 100px;
  }
 
  .service-blog .service-bg .service-card-blog .service-card .service-content h3 {
-   font-size: 16px;
+   font-size: 15px;
    text-align: center;
    font-family: "Poppins", serif;
    font-weight: 700;
@@ -252,27 +265,7 @@
    font-weight: 700;
  }
 
- .technical-tool-blog .tool-flex-box {
-   margin: 20px 0;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
- }
 
- .technical-tool-blog .tool-flex-box .tool-bar {
-   text-align: center;
- }
-
- .technical-tool-blog .tool-flex-box .tool-bar img {
-   width: 75px;
-   height: 75px;
- }
-
- .technical-tool-blog .tool-flex-box .tool-bar p {
-   margin: 0;
-   font-family: "Roboto Flex", serif;
-   font-weight: 700;
- }
 
  /* ===== PROCESS ===== */
  .process-blog {
@@ -390,14 +383,14 @@
  }
 
  .contact-us-blog .contact-bg .form-box h2 {
-  font-family: "Poppins", serif;
-  font-weight: 700;
+   font-family: "Poppins", serif;
+   font-weight: 700;
    color: #ffffff;
  }
 
  .contact-us-blog .contact-bg .form-box p {
-  font-family: "Poppins", serif;
-  font-weight: 500;
+   font-family: "Poppins", serif;
+   font-weight: 500;
    color: #ffffff;
  }
 
@@ -434,8 +427,8 @@
  }
 
  .contact-us-blog .contact-bg .form-box form button {
-  font-family: "Poppins", serif;
-    font-weight: 700;
+   font-family: "Poppins", serif;
+   font-weight: 700;
    font-size: 12px;
    color: #000000;
    background-color: #FFEA60;
@@ -519,7 +512,7 @@
    padding: 0 0 0 14%;
    font-family: "Poppins", serif;
    font-weight: 500;
-   font-size:12px
+   font-size: 12px
  }
 
  /* ===== FOOTER ===== */
@@ -556,15 +549,15 @@
  }
 
  .footer-blog .footer-bg .quick-link ul li {
-  font-family: "Poppins", serif;
-  font-weight: 500;
+   font-family: "Poppins", serif;
+   font-weight: 500;
    list-style-type: none;
    font-size: 14px;
  }
 
  .footer-blog .footer-bg .our-service h2 {
-  font-family: "Poppins", serif;
-  font-weight: 600;
+   font-family: "Poppins", serif;
+   font-weight: 600;
    font-size: 20px;
  }
 
@@ -573,15 +566,15 @@
  }
 
  .footer-blog .footer-bg .our-service ul li {
-  font-family: "Poppins", serif;
-  font-weight: 500;
+   font-family: "Poppins", serif;
+   font-weight: 500;
    list-style-type: none;
    font-size: 14px;
  }
 
  .footer-blog .footer-bg .where-we-are-heading {
-  font-family: "Poppins", serif;
-  font-weight: 700;
+   font-family: "Poppins", serif;
+   font-weight: 700;
    text-align: center;
  }
 
@@ -623,4 +616,169 @@
    font-family: "Poppins", serif;
    font-weight: 500;
    font-size: 16px;
+ }
+
+
+
+
+
+
+
+
+
+ /* ===== BANNER SERVICE TAG SLIDER ===== */
+
+
+ .slider-container {
+   overflow: hidden;
+   width: 100%;
+   position: relative;
+ }
+
+ .slider {
+   display: flex;
+   transition: transform 0.5s ease-in-out;
+ }
+
+ .slide {
+   min-width: 20%;
+   /* Adjust as needed */
+   text-align: center;
+   padding: 10px;
+ }
+
+ .service-tag {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .service-tag img {
+   width: 100px;
+   height: auto;
+ }
+
+ .service-tag span {
+   margin-top: 10px;
+   font-size: 14px;
+   font-weight: bold;
+ }
+
+
+ /* ===== TECHNICAL TOOL ===== */
+
+ .technical-tool-blog .slider-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  margin: 20px 0;
+}
+
+.technical-tool-blog .slider-container  .slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.technical-tool-blog .slider-container  .slider .slide {
+  min-width: 14%;
+  text-align: center;
+  padding: 10px;
+}
+
+.tool-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tool-tag img {
+  width: 75px;
+  height: 75px;
+}
+
+.tool-tag span {
+  /* margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold; */
+  font-family: "Roboto Flex", serif;
+   font-weight: 700;
+}
+
+
+ /* ===== MEDIA QUERIES ===== */
+
+ @media screen and (min-width: 1440px) {
+  .nav-header nav .container-fluid{max-width: 1440px;}
+   .banner-blog {
+     display: flex;
+     justify-content: center;
+   }
+
+   .banner-blog .banner-bg{max-width: 1440px;}
+   .banner-service-tag{
+    display: flex;
+    justify-content: center;
+   }
+   .banner-service-tag .slider-container{max-width: 1440px;}
+   .about-us-blog{
+    display: flex;
+    justify-content: center;
+   }
+   .about-us-blog .about-bg{max-width: 1440px;}
+   .service-blog{
+    display: flex;
+    justify-content: center;
+   }
+   .service-blog .service-bg{max-width: 1440px;}
+   .technical-tool-blog{display: flex; justify-content: center;}
+   .technical-tool-blog .tool-max-wd{max-width: 1440px;width: 100%;}
+   .process-blog{display: flex; justify-content: center;}
+   .process-blog .process-max-wd{max-width: 1440px; width: 100%;}
+   .choose-us-blog{display: flex; justify-content: center;}
+   .choose-us-blog .row{max-width: 1440px;}
+   .hire-team-blog{display: flex; justify-content: center;}
+   .hire-team-blog .hire-team-bg{max-width: 1440px;width: 100%;}
+   .contact-us-blog{display: flex; justify-content: center;}
+   .contact-us-blog .contact-footer-max-wd{max-width: 1440px;width: 100%;}
+   .footer-blog{max-width: 1440px;}
+ }
+
+ @media screen and (max-width: 991px) {
+  .banner-blog .banner-bg {background-size: cover;}
+  .banner-blog .banner-bg .banner-content h1 {text-align: center;}
+  .banner-blog .banner-bg .banner-content p {text-align: center;}
+  .banner-blog .banner-bg .banner-content{text-align: center;}
+  .banner-blog .banner-bg .banner-img img {width: 100%;}
+  .about-us-blog .about-bg .about-content {padding: 4%; text-align: center;}
+  .about-us-blog .about-bg .about-banner img {width: 100%;}
+  .technical-tool-blog .tool-flex-box .tool-bar img {width: 50px;height: 50px;}
+  .choose-us-blog .choose-banner{text-align: center;}
+  .choose-us-blog .choose-content{text-align: center;}
+  .hire-team-blog .hire-team-bg .hire-team-banner{text-align: center;}
+  .hire-team-blog .hire-team-bg .hire-team-content{text-align: center;}
+  .contact-us-blog .contact-bg .form-box h2 {text-align: center;}
+  .contact-us-blog .contact-bg .form-box p {text-align: center;}
+  .contact-us-blog .contact-bg .form-box form {text-align: center;}
+  .footer-blog {bottom: -67%;pointer-events: none;}
+  .contact-us-blog .contact-bg .contact-faq-box {margin-top: 3%;}
+  .footer-blog .footer-bg .quick-link{text-align: center;}
+  .footer-blog .footer-bg .our-service{text-align: center;}
+  .copy-follow-flex {flex-direction: column;text-align: center;margin:  3% 0;}
+ }
+
+ @media screen and (max-width: 763px) {
+  .banner-blog .banner-bg .banner-content h1{font-size: 35px;}
+  .banner-service-tag .service-tag img {width: 30px;}
+  .banner-service-tag .service-tag span {font-size: 10px;}
+  .choose-us-blog .choose-banner img{width: 100%;}
+  .hire-team-blog .hire-team-bg .hire-team-banner img{width: 100%;}
+  .technical-tool-blog .tool-flex-box .tool-bar img {width: 40px;height: 40px;}
+  .technical-tool-blog .tool-flex-box .tool-bar p{font-size: 10px;}
+ }
+
+ @media screen and (max-width: 585px) {
+  .banner-blog .banner-bg .banner-content h1{font-size: 25px;}
+  .banner-service-tag .service-tag img {width: 25px;}
+  .banner-service-tag .service-tag span {font-size: 8px;}
+  .choose-us-blog .choose-banner img{width: 100%;}
  }

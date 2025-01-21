@@ -1,0 +1,62 @@
+/* ===== TECHNICAL TOOL =====  */
+
+.technical-tool-blog {
+    margin: 2% 0;
+  }
+ 
+  .technical-tool-blog h2 {
+    text-align: center;
+    font-family: "Poppins", serif;
+    font-weight: 700;
+  }
+ 
+  .technical-tool-blog .tool-flex-box {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+ 
+  .technical-tool-blog .tool-flex-box .tool-bar {
+    text-align: center;
+  }
+ 
+  .technical-tool-blog .tool-flex-box .tool-bar img {
+    width: 75px;
+    height: 75px;
+  }
+ 
+  .technical-tool-blog .tool-flex-box .tool-bar p {
+    margin: 0;
+    font-family: "Roboto Flex", serif;
+    font-weight: 700;
+  }
+
+
+.technical-tool-blog {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tool-flex-box {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.tool-bar {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool-bar img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.tool-bar p {
+  text-align: center;
+  font-size: 14px;
+}
